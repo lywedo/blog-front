@@ -1,0 +1,29 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
+    "axios": "^0.21.0",
+    "core-js": "^3.6.5",
+    "cross-env": "^5.0.1",
+    "element-ui": "^2.13.2",
+    "highlight.js": "^10.3.1",
+    "koa": "^2.4.1",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.2",
+    "marked": "^1.2.2",
+    "nuxt": "^2.14.6",
+    "source-map-support": "^0.4.15",
+    "vue-light-timeline": "^0.12.8"
+  },
+  "devDependencies": {
+    "babel-plugin-component": "^1.1.0"
+  }
+}
