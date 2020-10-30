@@ -70,7 +70,7 @@ export default {
 	async asyncData({app}) {
 		// 服务器端渲染数据
 		let json = {page:1,pageSize:5}
-		let {data} =await app.$axios.get(`${baseurl}/articles/query`,{params:json});
+		let {data} =await app.$axios.get(`${dockerurl}/articles/query`,{params:json});
 		if(data.code == 200 && data.data){
 			let list = data.data.records
 			let count = data.data.total

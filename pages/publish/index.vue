@@ -44,7 +44,7 @@
 <script>
 import NavHeader from "~/components/NavHeader.vue";
 import NavFooter from "~/components/Footer.vue";
-import { baseurl, USER_INFO } from "~/plugins/url.js";
+import {dockerurl, baseurl, USER_INFO } from "~/plugins/url.js";
 export default {
   data() {
     return {
@@ -72,7 +72,7 @@ export default {
     NavFooter,
   },
   async asyncData({ app }) {
-    let { data } = await app.$axios.get(`${baseurl}/sorts/all`);
+    let { data } = await app.$axios.get(`${dockerurl}/sorts/all`);
     console.log(data);
     if (data.code == 200 && data.data) {
       let sorts = data.data;

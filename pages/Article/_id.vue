@@ -64,7 +64,7 @@
 
 <script>
 import NavHeader from "~/components/NavHeader.vue";
-import { baseurl } from "~/plugins/url.js";
+import {dockerurl, baseurl } from "~/plugins/url.js";
 import Time from "~/plugins/time";
 import Geetest from "~/components/Geetest.vue";
 const highlight = require('highlight.js')
@@ -142,7 +142,7 @@ export default {
     };
   },
   async asyncData({ app, params }) {
-    let result = await app.$axios.get(`${baseurl}/articles/${params.id}`);
+    let result = await app.$axios.get(`${dockerurl}/articles/${params.id}`);
     if (result.data.code == 200 && result.data.data) {
       let info = result.data.data;
       return { info };
