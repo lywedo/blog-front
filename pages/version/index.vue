@@ -24,7 +24,7 @@
 
 <script>
 import NavHeader from '~/components/NavHeader.vue'
-import {baseurl} from '~/plugins/url.js'
+import {dockerurl, baseurl} from '~/plugins/url.js'
 export default {
     data() {
         return {
@@ -32,7 +32,7 @@ export default {
         }
     },
     async asyncData({app}) {
-        let result = await app.$axios.get(`${baseurl}/api/version/getVersion`);
+        let result = await app.$axios.get(`${dockerurl}/api/version/getVersion`);
         let {error,list} = result.data;
         return {list}
     },
