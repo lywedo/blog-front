@@ -21,14 +21,14 @@
 			<el-card class="about">
 				<div class="about-title">about Me</div>
 				<div class="about-name">
-					<!-- <img src="http://172.16.4.51:9000/boots/B620BABD2679FE7FCC076130369CC6EB.png" alt="brianlee"> -->
+					<!--<img src="http://www.ilovely.xyz:9000/lam/455443443065886" alt="brianlee">-->
 				</div>
 				<div class="about-content">
-					<p>网名：Brian·Lee</p>
+					<p>Name：Lin Yu</p>
 
 					<p>职业：客户端工程师</p>
 
-					<p>邮箱：cn_brian@163.com</p>
+					<p>邮箱：lywedo@126.com</p>
 				</div>
 			</el-card>
 			<!-- 近期文章开始 -->
@@ -46,7 +46,7 @@
 				<div class="link-title">友情链接</div>
 				<hr>
 				<div class="link-content">
-					<a href="/" target="_blank" class="link-url">虚位以待</a>
+					<a href="https://my.oschina.net/lamYu" target="_blank" class="link-url">我的开源中国博客</a>
 					<a href="/" target="_blank" class="link-url">虚位以待</a>
 				</div>
 			</el-card>
@@ -60,7 +60,7 @@
 <script>
 import NavHeader from '~/components/NavHeader.vue'
 import NavFooter from '~/components/Footer.vue'
-import {dockerurl, baseurl, USER_INFO} from '~/plugins/url.js'
+import { baseurl, USER_INFO} from '~/plugins/url.js'
 export default {
 	data() {
 		return {
@@ -70,7 +70,8 @@ export default {
 	async asyncData({app}) {
 		// 服务器端渲染数据
 		let json = {page:1,pageSize:5}
-		let {data} =await app.$axios.get(`${dockerurl}/articles/query`,{params:json});
+		console.log(`${baseurl}/articles/query`)
+		let {data} =await app.$axios.get(`${baseurl}/articles/query`,{params:json})
 		if(data.code == 200 && data.data){
 			let list = data.data.records
 			let count = data.data.total
@@ -101,11 +102,11 @@ export default {
 	},
 	head() {
 		return {
-			title:'Brian的个人博客-一个基于Nuxt构建的博客网站',
+			title:'林宇个人笔记',
 			meta:[
-				{hid:'description',name:'description',content:'李闯个人博客，是一个记录博主学习和成长的自媒体博客。关注于web前端技术和web全栈技术的学习研究。'},
-				{hid:'keywords',name:'keywords',content:'李闯,互联网,自媒体,李闯博客,新鲜科技,科技博客,Brian,独立博客,个人博客,原创博客,brianlee,brian,前端,前端开发,全栈,全栈开发,nuxt,nuxtjs,vue,vuejs'},
-				{hid:'author',content:'brian'}
+				{hid:'description',name:'description',content:'林宇个人主页，是一个记录林宇学习和成长的自媒体主页。全栈工程师'},
+				{hid:'keywords',name:'keywords',content:'林宇,互联网,自媒体,林宇博客,新鲜科技,科技博客,lam,独立博客,个人博客,原创博客,yulam,前端,前端开发,全栈,全栈开发,mysql,springboot,minio,nuxt,nuxtjs,vue,vuejs'},
+				{hid:'author',content:'lam'}
 			]
 		}
 	}

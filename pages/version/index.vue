@@ -24,7 +24,7 @@
 
 <script>
 import NavHeader from '~/components/NavHeader.vue'
-import {dockerurl, baseurl} from '~/plugins/url.js'
+import {baseurl} from '~/plugins/url.js'
 export default {
     data() {
         return {
@@ -32,7 +32,7 @@ export default {
         }
     },
     async asyncData({app}) {
-        let result = await app.$axios.get(`${dockerurl}/api/version/getVersion`);
+        let result = await app.$axios.get(`${baseurl}/api/version/getVersion`);
         let {error,list} = result.data;
         return {list}
     },
@@ -43,8 +43,8 @@ export default {
 		return {
 			title:'更新日志-Brian的个人博客',
 			meta:[
-				{hid:'description',name:'description',content:'李闯个人博客，是一个记录博主学习和成长的自媒体博客。关注于web前端技术和web全栈技术的学习研究。'},
-				{hid:'keywords',name:'keywords',content:'李闯,互联网,自媒体,李闯博客,新鲜科技,科技博客,Brian,独立博客,个人博客,原创博客,brianlee,brian,前端,前端开发,全栈,全栈开发,nuxt,nuxtjs,vue,vuejs'},
+				{hid:'description',name:'description',content:'林宇个人博客，是一个记录博主学习和成长的自媒体博客。关注于web前端技术和web全栈技术的学习研究。'},
+				{hid:'keywords',name:'keywords',content:'林宇,互联网,自媒体,林宇博客,新鲜科技,科技博客,LIN YU,独立博客,个人博客,原创博客,前端,前端开发,全栈,全栈开发,nuxt,nuxtjs,vue,vuejs'},
 				{hid:'author',content:'brian'}
 			]
 		}

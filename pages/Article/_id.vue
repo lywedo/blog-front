@@ -4,7 +4,6 @@
     <el-row type="flex" justify="center">
       <el-col :span="14" class="detail_title">
         <div>{{ info.articleTitle }}</div>
-        <!-- <div class="time">发布时间：{{info.articleDate}}&nbsp;&nbsp;&nbsp;&nbsp;分类：{{list === 'Front' ? '前端文章' : '后端文章'}}</div> -->
         <div class="time">发布时间：{{ info.articleDate }}</div>
       </el-col>
     </el-row>
@@ -64,7 +63,7 @@
 
 <script>
 import NavHeader from "~/components/NavHeader.vue";
-import {dockerurl, baseurl } from "~/plugins/url.js";
+import {baseurl } from "~/plugins/url.js";
 import Time from "~/plugins/time";
 import Geetest from "~/components/Geetest.vue";
 const highlight = require('highlight.js')
@@ -142,7 +141,7 @@ export default {
     };
   },
   async asyncData({ app, params }) {
-    let result = await app.$axios.get(`${dockerurl}/articles/${params.id}`);
+    let result = await app.$axios.get(`${baseurl}/articles/${params.id}`);
     if (result.data.code == 200 && result.data.data) {
       let info = result.data.data;
       return { info };
@@ -152,6 +151,7 @@ export default {
     ripeTxt() {
       // console.log('computed:', this.info.articleContent)
       return marked(this.info.articleContent)
+      // return 'this.info.articleContentsdfasdfsadfaaaaaaaaaaasdfasfsfsafsafasfsdfsdfsfasfasdgafgdsfgsaasdgas'
     },
   },
   head() {
@@ -277,8 +277,13 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @import "./../../assets/css/Index/Detail.less";
+// @import '~assets/css/Markdown.css';
+.markdown-body{
+   overflow:hidden;
+}
+
 .comment {
   .clearfix:before,
   .clearfix:after {

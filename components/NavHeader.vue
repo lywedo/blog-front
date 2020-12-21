@@ -3,7 +3,7 @@
 	<div class="nav">
 	<el-row type="flex" class="NavHeader" justify="center">
 		<el-col :span="20">
-			<nuxt-link :to="{name:'index'}" class="logo">lam's Blog</nuxt-link>
+			<nuxt-link :to="{name:'index'}" class="logo">林宇工作笔记</nuxt-link>
 			<el-menu :default-active="active" class="el-menu-demo navbar" active-text-color="#41b883" text-color="#fff"  mode="horizontal" @select="handleSelect">
 				<el-menu-item index="index">文章列表</el-menu-item>
 				<!--<el-menu-item index="Backarticle">后端文章</el-menu-item>-->

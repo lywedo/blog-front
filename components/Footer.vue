@@ -2,8 +2,8 @@
   <div>
   	<el-row type="flex" justify="center">
   		<el-col :span="24" class="footer">
-			<div>COPYRIGHT 2018 BRIAN LEE. ALL RIGHTS RESERVED.</div>
-			<div>皖ICP备18003757号</div>
+			<div>COPYRIGHT 2021 YU LIN. ALL RIGHTS RESERVED.</div>
+			<a href="http://beian.miit.gov.cn">浙ICP备2020044419号-1</a>
   		</el-col>
   	</el-row>
   </div>

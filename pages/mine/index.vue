@@ -40,7 +40,7 @@ export default {
     margin: 0;
     padding: 0;
     font-family: Microsoft Yahei, "PingHei", "Helvetica Neue", "Helvetica", "STHeitiSC-Light", "Arial", sans-serif;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     background-color: #ffffff;
   }
