@@ -6,7 +6,7 @@ export default function ({ $axios, redirect }) {
   $axios.onRequest(config => {
     if (process.browser) {
       vm.$loading()
-      let token = sessionStorage.getItem('USER_INFO')==null ?null:JSON.parse(sessionStorage.getItem('USER_INFO')).Authorization
+      let token = sessionStorage.getItem('USER_INFO')==null ?null:JSON.parse(sessionStorage.getItem('USER_INFO')).authorization
       // let token = $store.userInfo.authorization
       if (token) {
         config.headers['Authorization'] = token;
